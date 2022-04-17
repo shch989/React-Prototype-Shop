@@ -2,7 +2,7 @@ import { useCallback, useState } from "react"
 import AppStateContext from "../contexts/AppStateContext"
 
 const AppStateProvider = ({children}) => {
-  const [prototypes, ] = useState([
+  const [prototypes] = useState([
     {
       id: "pp-01",
       title: "Kids-story",
@@ -140,7 +140,7 @@ const AppStateProvider = ({children}) => {
 
 
   const addToOrder = useCallback((id) => {
-    setOrders(orders => {
+    setOrders((orders) => {
       const finded = orders.find(order => order.id === id);
 
       if (finded === undefined) {
@@ -159,8 +159,14 @@ const AppStateProvider = ({children}) => {
       }
     })
   }, []);
-  const remove = useCallback((id) => {}, []);
-  const removeAll = useCallback(() => {}, []);
+  const remove = useCallback((id) => {
+    setOrders(orders => {
+      return orders.filter(order => order.id !== id);
+    })
+  }, []);
+  const removeAll = useCallback(() => {
+    setOrders([])
+  }, []);
 
   return (  
     <AppStateContext.Provider 
