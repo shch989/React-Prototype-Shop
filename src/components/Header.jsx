@@ -1,7 +1,7 @@
 export default function Header() {
   return (<header>
     <div className="header__container">
-      <div className="title">Awesome Prototypes in Shop</div>
+      <div className="title">My React Shopping Mall</div>
       <div className="subtitle">
         Check out what other designers have created using ProtoPie—download
         these examples to learn exactly how they made their interactions.
