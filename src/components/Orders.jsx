@@ -51,7 +51,7 @@ export default function Orders() {
                 <p className="price">
                   $ {prototype.price * order.quantity}
                 </p>
-                <button className="btn btn--link" onclick={click}>
+                <button className="btn btn--link" onClick={click}>
                   <i className="icon icon--cross"></i>
                 </button>
               </div>
